@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3625e0e9-8590-44fc-b07f-4e3110002641" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpringBoot/src/main/resources/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/src/main/resources/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/target/classes/xyz/up123/springboot/server/impl/UserRoleServerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/target/classes/xyz/up123/springboot/server/impl/UserRoleServerImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/target/classes/xyz/up123/springboot/server/impl/UserServerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/target/classes/xyz/up123/springboot/server/impl/UserServerImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,7 +35,7 @@
           <entry key="md" value="12" />
           <entry key="png" value="1" />
           <entry key="properties" value="4" />
-          <entry key="xml" value="14" />
+          <entry key="xml" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -49,7 +46,7 @@
           <entry key="Markdown" value="12" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="4" />
-          <entry key="XML" value="14" />
+          <entry key="XML" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -57,7 +54,7 @@
           <entry key="Spring杂项" value="3" />
           <entry key="dummy" value="5" />
           <entry key="java" value="1577" />
-          <entry key="md" value="1293" />
+          <entry key="md" value="1294" />
           <entry key="properties" value="111" />
           <entry key="txt" value="8" />
           <entry key="xml" value="361" />
@@ -66,7 +63,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="1577" />
-          <entry key="Markdown" value="1293" />
+          <entry key="Markdown" value="1294" />
           <entry key="PLAIN_TEXT" value="16" />
           <entry key="Properties" value="111" />
           <entry key="SQL" value="16" />
@@ -81,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/java/xyz/up123/springboot/server/impl/UserServerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,8 +90,8 @@
         <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="147">
-                <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+              <first_editor relative-caret-position="105">
+                <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               </first_editor>
               <second_editor />
             </state>
@@ -402,7 +399,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542421670378" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542422234060" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -483,7 +480,7 @@
       <updated>1542280857032</updated>
       <workItem from="1542280859957" duration="27930000" />
       <workItem from="1542366890675" duration="23787000" />
-      <workItem from="1542414721184" duration="1207000" />
+      <workItem from="1542414721184" duration="1815000" />
     </task>
     <task id="LOCAL-00001" summary="测试一下">
       <created>1542421379007</created>
@@ -492,11 +489,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542421379007</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="测试一下">
+      <created>1542421617743</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542421617743</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52924000" />
+    <option name="totallyTimeSpent" value="53532000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -557,13 +561,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="测试一下" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.1.0.RELEASE/spring-context-5.1.0.RELEASE.jar!/org/springframework/context/support/AbstractRefreshableApplicationContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="15" column="76" lean-forward="true" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.1.0.RELEASE/spring-context-5.1.0.RELEASE.jar!/org/springframework/context/support/AbstractRefreshableConfigApplicationContext.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -922,7 +919,7 @@
     <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/java/xyz/up123/springboot/server/impl/UserServerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -969,11 +966,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1260" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="147">
-            <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <first_editor relative-caret-position="105">
+            <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           </first_editor>
           <second_editor />
         </state>
