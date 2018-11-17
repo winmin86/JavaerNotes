@@ -1,8 +1,8 @@
-###第一类：请求路径参数
-####1、@PathVariable
+### 第一类：请求路径参数
+#### 1、@PathVariable
 获取路径参数。即url/{id}这种形式。
 
-####2、@RequestParam
+#### 2、@RequestParam
 获取查询参数。即url?name=这种形式
 ```
 @GetMapping("/demo/{id}")
@@ -12,8 +12,8 @@ public void demo(@PathVariable(name = "id") String id, @RequestParam(name = "nam
 }
 ```
 
-###第二类：Body参数
-####1、@RequestBody
+### 第二类：Body参数
+#### 1、@RequestBody
 post一个json串
 ```
 @PostMapping(path = "/demo1")
@@ -28,7 +28,7 @@ public void demo1(@RequestBody Map<String, String> person) {
     System.out.println(person.get("name"));
 }
 ```
-####2、无注解
+#### 2、无注解
 表单提交
 ```
 @PostMapping(path = "/demo2")
@@ -37,9 +37,9 @@ public void demo2(Person person) {
 }
 ```
 
-###第三类：请求头参数以及Cookie
-####1、@RequestHeader
-####2、@CookieValue
+### 第三类：请求头参数以及Cookie
+#### 1、@RequestHeader
+#### 2、@CookieValue
 ```
 @GetMapping("/demo3")
 public void demo3(@RequestHeader(name = "myHeader") String myHeader,

@@ -15,7 +15,7 @@ ServiceB {
     }           
 }  
 ```
-###〇.事务的嵌套概念
+### 〇.事务的嵌套概念
 所谓事务的嵌套就是两个事务方法之间相互调用。spring事务开启 ，或者是基于接口的或者是基于类的代理被创建
 （注意一定要是代理，不能手动new 一个对象，并且此类（有无接口都行）一定要被代理——spring中的bean只要纳入了IOC管理都是被代理的）。
 所以**在同一个类中一个方法调用另一个方法有事务的方法，事务是不会起作用的。**
@@ -33,7 +33,7 @@ Spring默认情况下会对运行期例外(RunTimeException)，即uncheck异常�
 PS:将派生于Error或者RuntimeException的异常称为unchecked异常，所有其他的异常成为checked异常。
 ![img](img/exception.jpg)
 ---
-###一.spring事务传播属性propagation 
+### 一.spring事务传播属性propagation 
 在枚举Propagation（TransactionDefinition接口类似）中一共定义了7种事务传播属性：
 0. REQUIRED(0),支持当前事务，如果当前没有事务，就新建一个事务。这是最常见的选择。
 1. SUPPORTS(1),支持当前事务，如果当前没有事务，就以非事务方式执行。 
@@ -43,7 +43,7 @@ PS:将派生于Error或者RuntimeException的异常称为unchecked异常，所�
 5. NEVER(5),以非事务方式执行，如果当前存在事务，则抛出异常。 
 6. NESTED(6),如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则进行与PROPAGATION_REQUIRED类似的操作。
 
-#####(0).Propagation.REQUIRED
+##### (0).Propagation.REQUIRED
 假如当前正要执行的事务不在另外一个事务里，那么就起一个新的事务\ 
 - 1、如果ServiceA.methodA已经起了事务，这时调用ServiceB.methodB，
 ServiceB.methodB看到自己已经运行在ServiceA.methodA的事务内部，就不再起新的事务。
@@ -52,11 +52,11 @@ ServiceB.methodB看到自己已经运行在ServiceA.methodA的事务内部，就
 - 2、如果ServiceA.methodA没有事务，ServiceB.methodB就会为自己分配一个事务。
 这样，在ServiceA.methodA中是没有事务控制的。**只是在ServiceB.methodB内的任何地方出现异常，
 ServiceB.methodB将会被回滚，不会引起ServiceA.methodA的回滚。**
-#####(1).Propagation.SUPPORTS
+##### (1).Propagation.SUPPORTS
 如果当前在事务中，即以事务的形式运行，如果当前不再一个事务中，那么就以非事务的形式运行。
-#####(2).Propagation.MANDATORY
+##### (2).Propagation.MANDATORY
 必须在一个事务中运行。也就是说，他只能被一个父事务调用。否则，他就要抛出异常。
-#####(3).Propagation.REQUIRES_NEW
+##### (3).Propagation.REQUIRES_NEW
 启动一个新的, 不依赖于环境的 "内部" 事务. 这个事务将被完全 commited 或 rolled back 而不依赖于外部事务, 它拥有自己的隔离范围, 自己的锁, 等等. 当内部事务开始执行时, 外部事务将被挂起, 内务事务结束时, 外部事务将继续执行. 
 比如我们设计ServiceA.methodA的事务级别为Propagation.REQUIRED，ServiceB.methodB的事务级别为Propagation.REQUIRES_NEW，那么当执行到ServiceB.methodB的时候，
 ServiceA.methodA所在的事务就会挂起，ServiceB.methodB会起一个新的事务，等待ServiceB.methodB的事务完成以后，他才继续执行。他与Propagation.REQUIRED 的事务区别在于事务的回滚程度了。
@@ -67,13 +67,13 @@ ServiceA.methodA事务仍然可能提交；如果他抛出的异常未被Service
 
 使用场景：
 不管业务逻辑的service是否有异常，Log Service都应该能够记录成功，所以Log Service的传播属性可以配为此属性。最下面将会贴出配置代码。
-#####(4).Propagation.NOT_SUPPORTED
+##### (4).Propagation.NOT_SUPPORTED
 当前不支持事务。比如ServiceA.methodA的事务级别是Propagation.REQUIRED ，而ServiceB.methodB的事务级别是Propagation.SUPPORTED ，
 那么当执行到ServiceB.methodB时，ServiceA.methodA的事务挂起，而他以非事务的状态运行完，再继续ServiceA.methodA的事务。
-#####(5).Propagation.NEVER
+##### (5).Propagation.NEVER
 不能在事务中运行。假设ServiceA.methodA的事务级别是Propagation.REQUIRED， 而ServiceB.methodB的事务级别是Propagation.NEVER ，那么ServiceB.methodB就要抛出异常了。     
 
-#####(6).Propagation.NESTED
+##### (6).Propagation.NESTED
 开始一个 "嵌套的" 事务,  它是已经存在事务的一个真正的子事务. 潜套事务开始执行时,  它将取得一个 savepoint. 如果这个嵌套事务失败, 我们将回滚到此 savepoint. 潜套事务是外部事务的一部分, 只有外部事务结束后它才会被提交. 
 
 比如我们设计ServiceA.methodA的事务级别为Propagation.REQUIRED，ServiceB.methodB的事务级别为Propagation.NESTED，那么当执行到ServiceB.methodB的时候，ServiceA.methodA所在的事务就会挂起，ServiceB.methodB会起一个新的子事务并设置savepoint，等待ServiceB.methodB的事务完成以后，他才继续执行。。因为ServiceB.methodB是外部事务的子事务，那么\
@@ -90,7 +90,7 @@ Propagation.REQUIRES_NEW 完全是一个新的事务,它与外部事务相互独
 确保以上条件都满足后, 你就可以尝试使用 PROPAGATION_NESTED 了. 
 
 ---
-###二.spring事务隔离级别Isolation
+### 二.spring事务隔离级别Isolation
 
 0. DEFAULT(-1),使用数据库默认的隔离级别。 
 1. READ_UNCOMMITTED(1),它允许另外一个事务可以看到这个事务未提交的数据，可能导致脏读、不可重复读和幻读。 
@@ -111,7 +111,7 @@ Propagation.REQUIRES_NEW 完全是一个新的事务,它与外部事务相互独
 
 ---
 
-###三.spring事务其他属性
+### 三.spring事务其他属性
 		
 属性 | 类型 | 描述
 ---|---|---
@@ -126,7 +126,7 @@ noRollbackFor | Class对象数组，必须继承自Throwable | 不会导致事�
 noRollbackForClassName | 类名数组，必须继承自Throwable | 不会导致事务回滚的异常类名字数组
 
 ---
-###四.用法注意
+### 四.用法注意
 @Transactional 可以作用于接口、接口方法、类以及类方法上。当作用于类上时，
 该类的所有 public 方法将都具有该类型的事务属性，同时，我们也可以在方法级别使用该标注来覆盖类级别的定义。
 
