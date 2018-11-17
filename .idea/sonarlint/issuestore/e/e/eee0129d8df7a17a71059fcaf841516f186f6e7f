@@ -1,6 +1,0 @@
-
-qsquid:UselessImportCheck"ARemove this unused import 'xyz.up123.springboot.domain.UserRole'.(ÿΝφόÿÿÿÿ8ΰοƒυρ,
-…squid:UselessImportCheck"URemove this unused import 'org.springframework.transaction.annotation.Transactional'.(πωηψωÿÿÿÿ8½υ‚υρ,
-[squid:UselessImportCheck	"+Remove this unused import 'java.util.List'.(Υλ±Δψÿÿÿÿ8ΰοƒυρ,
-ƒsquid:UselessImportCheck"SRemove this unused import 'org.springframework.transaction.annotation.Propagation'.(θª΅Ηϋÿÿÿÿ8½υ‚υρ,
-|squid:UselessImportCheck"QRemove this unused import 'org.springframework.transaction.annotation.Isolation'.(±§ΒΤ8½υ‚υρ,

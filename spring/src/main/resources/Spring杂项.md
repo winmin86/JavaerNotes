@@ -1,34 +1,34 @@
-###1.什么是Spring?
+### 1.什么是Spring?
 Spring是一个容器框架，用来装javabean（java对象），中间层框架（万能胶）可以起一个连接作用，比如说把Struts和hibernate粘合在一起运用。简单来说，**Spring是一个轻量级的控制反转(IoC)和面向切面(AOP)的容器框架**。
 
-###2.使用Spring的好处
+### 2.使用Spring的好处
 
-####1. 轻量级框架 
+#### 1. 轻量级框架 
 Spring是轻量级框架,基本的版本大约2M
-####2. 控制反转   
+#### 2. 控制反转   
 Spring通过控制反转实现松散耦合,对象们给它们的依赖,而不是创建或者查找依赖的对象们,方便解耦,简化开发
-####3. 面相切面的编程 AOP
+#### 3. 面相切面的编程 AOP
 Spring支持面相切面的编程,并且把应用业务逻辑和系统分开
-####4. 容器 
+#### 4. 容器 
 Spring 包含并管理应用中对象的生命周期和配置
-####5. MVC框架 
+#### 5. MVC框架 
 Spring的WEB框架是个精心设计的框架,是WEB框架的一个很好的替代品
-####6. 事务管理 
+#### 6. 事务管理 
 Spring 提供一个持续的事务管理接口,可以扩展到上至本地事务下至全局事务(JTA)
-####7. 异常处理 
+#### 7. 异常处理 
 Spring 提供方便的API把具体技术的相关异常(比如由JDBC Hibernate or JDO 抛出的) 转化为一致的 unchecked异常
 
-###IOC控制反转
+### IOC控制反转
 说的是创建对象实例的控制权从代码控制剥离到IOC容器控制，实际就是你在xml文件控制，侧重于原理。
 
-###DI依赖注入
+### DI依赖注入
 说的是创建对象实例时，为这个对象注入属性值或其他对象实例后，侧重于实现。
 
-###IoC 和 DI的区别？
+### IoC 和 DI的区别？
 IoC 控制反转，指将对象的创建权，反转到Spring容器 ， DI 依赖注入，指Spring创建对象的过程中，将对象依赖属性通过配置进行注入。
 
-###Context
-####ClassPathXmlApplicationContext
+### Context
+#### ClassPathXmlApplicationContext
 ClassPathXmlApplicationContext 默认会去 **classPath 路径**下找。classPath 路径指的就是编译后的 classes 目录。
 ```
 //单配置文件方式一
@@ -46,7 +46,7 @@ BeanFactory beanFactory = new ClassPathXmlApplicationContext("file:D:\work\sprin
 “classpath:” 是可以缺省的。\
 **如果是绝对路径，必须加上 “file:” 前缀，不可缺省。**
 
-####FileSystemXmlApplicationContext
+#### FileSystemXmlApplicationContext
 FileSystemXmlApplicationContext 默认是去**项目的路径**下加载，可以是相对路径，也可以是绝对路径，若是绝对路径，**“file:” 前缀可以缺省**。
 
 ```
@@ -63,7 +63,7 @@ BeanFactory beanFactory=new FileSystemXmlApplicationContext(new String[]{"src\ma
 BeanFactory beanFactory=new FileSystemXmlApplicationContext(new String[]{"D:\work\springtest\src\main\resources\application.xml"});
 ```
 
-####BeanFactory和ApplicationContext有什么区别
+#### BeanFactory和ApplicationContext有什么区别
 
 - 相同点\
 上述两者都是通过加载XMl配置文件的方式加载Bean,而后者是前者的扩展,提供了更多的功能,即**ApplicationContext拥有BeanFactory的全部功能**,在绝大多数的"典型的"企业应用和系统,ApplicationContext都优先于BeanFactory.
@@ -76,7 +76,7 @@ ApplicationContext的功能：
 - 统一的资源文件读取方式
 - 已在监听器中注册的bean的事件
 
-####Bean的生命周期活动
+#### Bean的生命周期活动
     
     1.Bean的建立， 由BeanFactory读取Bean定义文件，并生成各个实例
     2.Setter注入，执行Bean的属性依赖注入
@@ -90,7 +90,7 @@ ApplicationContext的功能：
     10.Bean定义文件中定义destroy-method，在容器关闭时，可以在Bean定义文件中使用“destory-method”定义的方法
 
 
-###什么是AOP，AOP的作用是什么？
+### 什么是AOP，AOP的作用是什么？
 
 AOP利用一种称为“横切”的技术，剖解开封装的对象内部，并将那些影响了多个类的公共行为封装到一个可重用模块，并将其名为 “Aspect”，即方面。所谓“方面”，简单地说，就是将那些与业务无关，却为业务模块所共同调用的逻辑或责任封装起来，便于减少系统的重复代码，降低 模块间的耦合度，并有利于未来的可操作性和可维护性。\
 **AOP把软件系统分为两个部分：核心关注点和横切关注点。**
@@ -113,7 +113,7 @@ AOP利用一种称为“横切”的技术，剖解开封装的对象内部，�
 ![image](img/aop.png)
 ![image](img/aop1.png)
 
-###AOP通知有哪些类型？
+### AOP通知有哪些类型？
 - 前置通知（Before advice）：在某连接点（join point）之前执行的通知，但这个通知不能阻止连接点前的执行（除非它抛出一个异常）。
 - 返回后通知（After returning advice）：在某连接点（join point）正常完成后执行的通知：例如，一个方法没有抛出任何异常，正常返回。 
 - 抛出异常后通知（After throwing advice）：在方法抛出异常退出时执行的通知。 
@@ -121,7 +121,7 @@ AOP利用一种称为“横切”的技术，剖解开封装的对象内部，�
 - 环绕通知（Around Advice）：包围一个连接点（join point）的通知，如方法调用。这是最强大的一种通知类型。 环绕通知可以在方法调用前后完成自定义的行为。它也会选择是否继续执行连接点或直接返回它们自己的返回值或抛出异常来结束执行。 
 
 
-###Spring如何处理线程并发问题？
+### Spring如何处理线程并发问题？
 Spring 的绝大多数Bean都是singleton的（非线程安全的），springmvc的controller也是是singleton的，以springmvc为例，
 每个request过来，系统都会用原有的instance去处理，这样导致了两个结果:一是我们不用每次创建Controller，
 二是减少了对象创建和垃圾收集的时间;由于只有一个Controller的instance，当多个线程调用它的时候，它里面的instance变量就不是线程安全的了，
@@ -139,10 +139,10 @@ ThreadLocal<Long> startTime = newThreadLocal<Long>();//定义一个ThreadLocal
 startTime.set(System.currentTimeMillis());//写入值
 startTime.get();//读取值
 ```
-###为什么要有事物传播行为？
+### 为什么要有事物传播行为？
 ![image](img/transaction.png)
 
-###SpringMVC的工作流程？
+### SpringMVC的工作流程？
 ![img](img/mvc.jpg)
 
 流程\
@@ -158,7 +158,7 @@ startTime.get();//读取值
 10、DispatcherServlet根据View进行渲染视图（即将模型数据填充至视图中）。\
 11、DispatcherServlet响应用户
 
-###Spring、SpringMVC和Springboot的区别
+### Spring、SpringMVC和Springboot的区别
 1. spring是一个一站式的轻量级的java开发框架，核心是控制反转（IOC）和面向切面（AOP），针对于开发的WEB层(springMvc)、业务层(Ioc)、持久层(jdbcTemplate)等都提供了多种配置解决方案；
 2. springMvc是spring基础之上的一个MVC框架，主要处理web开发的路径映射和视图渲染，属于spring框架中WEB层开发的一部分；
 3. spring boot使用了默认大于配置的理念，集成了快速开发的spring多个插件，同时自动过滤不需要配置的多余的插件，简化了项目的开发配置流程，一定程度上取消xml配置，是一套快速配置开发的脚手架，能快速开发单个微服务；

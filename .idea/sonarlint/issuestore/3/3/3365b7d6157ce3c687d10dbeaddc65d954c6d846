@@ -1,4 +1,0 @@
-
-vsquid:UselessImportCheck"KRemove this unused import 'org.springframework.context.annotation.Primary'.(“ð›ß8¹ÿðãñ,
-esquid:S001121"FDefine and throw a dedicated exception instead of using a generic one.(¼ê¼Â8¹ÿðãñ,
-¤%squid:RedundantThrowsDeclarationCheck1"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(¼ê¼Â8¹ÿðãñ,

@@ -1,4 +1,4 @@
-###方法一：基于XML的bean定义（需要提供setter方法）
+### 方法一：基于XML的bean定义（需要提供setter方法）
 
 类参考Student和Teacher
 ```
@@ -26,7 +26,7 @@ Student student= (Student) context.getBean("student");
 Teacher teacher= (Teacher) context.getBean("teacher");
 
 ```
-###方法二：基于注解的bean定义（不需要提供setter方法）
+### 方法二：基于注解的bean定义（不需要提供setter方法）
 Spring为此提供了四个注解，这些注解的作用与上面的XML定义bean效果一致，在于将组件交给Spring容器管理。组件的名称默认是类名（首字母变小写），也可以自己修改：\
 @Component：当对组件的层次难以定位的时候使用这个注解\
 @Controller：表示控制层的组件\
@@ -72,7 +72,7 @@ ApplicationContext context = new ClassPathXmlApplicationContext("classpath:appli
 User user= (Student) context.getBean("User");
 ```
 
-###方法三：基于Java类的bean定义（需要提供setter方法）
+### 方法三：基于Java类的bean定义（需要提供setter方法）
 ```
 @Configuration
 public class Beans {
@@ -101,7 +101,7 @@ Student student= (Student) context.getBean("student");
 Teacher teacher= (Teacher) context.getBean("teacher");
 ```
 
-###两种注入方式
+### 两种注入方式
 - **构造器注入** （constructor-arg：通过构造函数注入。）
 ```
 <bean id="students" class="xyz.up123.spring.domain.Student">
@@ -132,7 +132,7 @@ Teacher teacher= (Teacher) context.getBean("teacher");
 构造函数不利于类的继承和扩展；
 构造函数注入会引起循环依赖的问题。 
 ```
-###Bean的作用域scope
+### Bean的作用域scope
 - singleton(单例模式)：这种bean范围是**默认**的，这种范围确保不管接受到多少个请求，每个容器中只有一个bean的实例，单例的模式由bean factory自身来维护。
 - prototype(原型模式/多例模式)：一个bean（对象）定义对应多个对象实例
 - request：在请求bean范围内会每一个来自客户端的网络请求创建一个实例，在请求完成以后，bean会失效并被垃圾回收器回收。在一次HTTP请求中，一个bean定义对应一个实例；即每次HTTP请求将会有各自的bean实例， 它们依据某个bean定义创建而成。该作用 域仅在基于web的Spring ApplicationContext情形下有效。
@@ -142,9 +142,9 @@ Teacher teacher= (Teacher) context.getBean("teacher");
 
 根据经验，**对所有有状态的bean应该使用prototype作用域，而对无状态的bean则应该使用singleton作用域**
 
-###Spring的自动注入
+### Spring的自动注入
 
-####1.基于XML的自动装配
+#### 1.基于XML的自动装配
 Spring提供了五种自动装配的类型
 - no：顾名思义， 显式指明不使用Spring的自动装配功能
 - byName：根据属性和组件的名称匹配关系来实现bean的自动装配
@@ -158,7 +158,7 @@ Spring提供了五种自动装配的类型
     <property name="name" value="张三"/>
 </bean>
 ```
-####2.基于注解的自动装配
+#### 2.基于注解的自动装配
 
 - @Resource默认是使用byName进行装配\
 - @Autowired默认使用byType进行装配
