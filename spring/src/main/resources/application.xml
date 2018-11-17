@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+       default-autowire="byName">
+
+    <bean id="messageService" class="xyz.up123.spring.server.impl.MessageServiceImpl"/>
+
+    <!-- 方法一：基于XML的bean定义（需要提供setter方法） -->
+    <!--<bean id="teacher" class="xyz.up123.spring.domain.Teacher">
+        <property name="name" value="李四"/>
+    </bean>-->
+    <!-- 引用了teacher bean -->
+    <!--<bean id="student" class="xyz.up123.spring.domain.Student"  scope="prototype">
+        <property name="name" value="张三"/>
+        <property name="teacher" ref="teacher"/>
+    </bean>-->
+
+    <!-- 方法二：基于注解的bean定义（不需要提供setter方法） -->
+    <!-- 扫描组件的包目录 -->
+    <context:component-scan base-package="xyz.up123.spring.domain"/>
+
+    <bean id="students" class="xyz.up123.spring.domain.Student" scope="prototype">
+        <constructor-arg name="name" value="小明"></constructor-arg>
+        <constructor-arg name="teacher" ref="teachers"></constructor-arg>
+    </bean>
+
+    <bean id="teachers" class="xyz.up123.spring.domain.Teacher" scope="singleton">
+        <constructor-arg value="张老师"></constructor-arg>
+    </bean>
+</beans>
