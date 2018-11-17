@@ -1,0 +1,5 @@
+
+jsquid:S001127"FDefine and throw a dedicated exception instead of using a generic one.(»ÖÑ¥þÿÿÿÿ8ˆÙ¯èñ,
+©%squid:RedundantThrowsDeclarationCheck7"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(»ÖÑ¥þÿÿÿÿ8ˆÙ¯èñ,
+nsquid:CommentedOutCodeLine""<This block of commented-out lines of code should be removed.(²þëßþÿÿÿÿ8ÒÚéñ,
+msquid:UselessImportCheck"CRemove this unused import 'com.alibaba.druid.pool.DruidDataSource'.(žË¸)8‚îßèñ,
