@@ -2,10 +2,8 @@ package xyz.up123.test;
 
 import xyz.up123.test.collection.User;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @ClassName: Test
@@ -15,13 +13,19 @@ import java.util.List;
  **/
 public class Test {
     public static void main(String[] args) {
-        List<User> users = new ArrayList<User>();
-        users.add(new User(15, "u15"));
-        users.add(new User(53, "u53"));
-        users.add(new User(26, "u26"));
-        users.add(new User(9, "u9"));
-        users.add(new User(20, "u20"));
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(34);
+        list.add(55);
+        list.add(56);
+        list.add(89);
+        list.add(12);
+        list.add(23);
+        list.add(126);
+        System.out.println(list);
 
+        ConcurrentHashMap<String, String> chm = new ConcurrentHashMap<>();
+
+        chm.put("a", "b");
 
     }
 }

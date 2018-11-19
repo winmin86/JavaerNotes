@@ -89,4 +89,83 @@ Collections.sort(arrayList, new Comparator<Integer>() {
 **对objects数组进行排序，我们可以用Arrays.sort()方法**\
 **对objects的集合进行排序，需要使用Collections.sort()方法**
 
+#### 6.数组与List的相互转换
+
+```java
+List<String> arrayList = new ArrayList<String>();
+arrayList.add("s");
+arrayList.add("e");
+arrayList.add("n");
+/**
+ * ArrayList转数组
+ */
+int size=arrayList.size();
+String[] a = arrayList.toArray(new String[size]);
+//输出第二个元素
+System.out.println(a[1]);//结果：e
+//输出整个数组
+System.out.println(Arrays.toString(a));//结果：[s, e, n]
+/**
+ * 数组转list
+ */
+List<String> list=new ArrayList<String>(Arrays.asList(a));
+list.add("b");//错误
+```
+常见错误：
+>List<Integer> list = Arrays.asList(1, 2, 3, 4);\
+>list.add(5);
+
+这是因为Arrays.asList返回的是Arrays内部类`private static class ArrayList<E> extends AbstractList<E>`的对象\
+但是这个类并没有实现add、remove等方法。
+正确写法：
+>List<Integer> list = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4));
+
+#### 7.ArrayList集合的交集 并集 差集 去重复并集
+
+- addAll(Collection<? extends E> c) :按指定集合的Iterator返回的顺序将指定集合中的所有元素追加到此列表的末尾
+- retainAll(Collection<?> c): 仅保留此列表中包含在指定集合中的元素。
+- removeAll(Collection<?> c) :从此列表中删除指定集合中包含的所有元素。
+
+```java
+List<Integer> list1 = new ArrayList<Integer>();
+list1.add(1);
+list1.add(2);
+list1.add(3);
+list1.add(4);
+
+List<Integer> list2 = new ArrayList<Integer>();
+list2.add(2);
+list2.add(3);
+list2.add(4);
+list2.add(5);
+// 并集(可能会有重复)
+//list1.addAll(list2);
+// 交集
+//list1.retainAll(list2);
+// 差集
+//list1.removeAll(list2);
+// 无重复并集
+//list2.removeAll(list1);
+//list1.addAll(list2);
+System.out.println(list1);
+```
+
+### 集合框架底层数据结构总结
+
+#### - Collection
+1. List
+- Arraylist：数组（查询快,增删慢 线程不安全,效率高 ）
+- Vector：数组（查询快,增删慢 线程安全,效率低 ）
+- LinkedList：链表（查询慢,增删快 线程不安全,效率高 ）
+2. Set
+- HashSet（无序，唯一）:哈希表或者叫散列集(hash table)
+- LinkedHashSet：链表和哈希表组成 。 由链表保证元素的排序 ， 由哈希表证元素的唯一性
+- TreeSet（有序，唯一）：红黑树(自平衡的排序二叉树。)
+#### - Map
+- HashMap：基于哈希表的Map接口实现（哈希表对键进行散列，Map结构即映射表存放键值对）
+- LinkedHashMap:HashMap 的基础上加上了链表数据结构
+- HashTable:哈希表
+- TreeMap:红黑树（自平衡的排序二叉树）
+
+
 
