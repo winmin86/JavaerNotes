@@ -1,4 +1,6 @@
 - [摘自](https://juejin.im/post/5ad6e4066fb9a028d82c4b66)
+- [史上最全Redis高可用技术解决方案大全](https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&mid=2247484478&idx=1&sn=a1250d9b8025cd7cb6fc6a58238ab51e)
+- [redis 总结——重构版](https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&mid=2247484450&idx=1&sn=7ee03fa67aecd05c5becd2a8259d3631)
 
 ### 1.Redis与Memcached的区别与比较
 1、Redis不仅仅支持简单的k/v类型的数据，同时还提供list，set，zset，hash等数据结构的存储。memcache支持简单的数据类型，String。\
