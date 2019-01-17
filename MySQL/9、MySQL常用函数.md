@@ -193,5 +193,5 @@ USER()或SYSTEM_USER()  返回当前登陆用户名
 VERSION()   返回MySQL服务器的版本
 示例：
 SELECT DATABASE(),VERSION(),USER();
-SELECTBENCHMARK(9999999,LOG(RAND()*PI()));#该例中,MySQL计算LOG(RAND()*PI())表达式9999999次。  可以测试某些特定操作的执行速度
+SELECT BENCHMARK(9999999,LOG(RAND()*PI()));#该例中,MySQL计算LOG(RAND()*PI())表达式9999999次。  可以测试某些特定操作的执行速度
 ```
