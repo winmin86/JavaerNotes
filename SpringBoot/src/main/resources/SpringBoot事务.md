@@ -30,7 +30,7 @@ Spring默认情况下会对运行期例外(RunTimeException)，即uncheck异常�
 3 不需要事务管理的(只查询的)方法：@Transactional(propagation=Propagation.NOT_SUPPORTED)
 上面三种方式也可在xml配置
 
-PS:将派生于Error或者RuntimeException的异常称为unchecked异常，所有其他的异常成为checked异常。
+PS:将派生于Error或者RuntimeException的异常称为unchecked异常，所有其他的异常成为checked异常。\
 ![img](img/exception.jpg)
 ---
 ### 一.spring事务传播属性propagation 
