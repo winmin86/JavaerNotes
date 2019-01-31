@@ -43,10 +43,10 @@ Hash是一个string类型的field和value的映射表，hash特别适合用于�
 比如下面我就用 hash 类型存放了我本人的一些信息：
 >key=JavaUser293847
  value={
-   “id”: 1,
-   “name”: “SnailClimb”,
-   “age”: 22,
-   “location”: “Wuhan, Hubei”
+   "id": 1,
+   "name": "SnailClimb",
+   "age": 22,
+   "location": "Wuhan, Hubei"
  }
 
 #### 5.3 List
@@ -76,6 +76,8 @@ set对外提供的功能与list类似是一个列表的功能，特殊之处在�
 但是仅仅通过设置过期时间还是有问题的。我们想一下：如果定期删除漏掉了很多过期 key，然后你也没及时去查，也就没走惰性删除，此时会怎么样？如果大量过期key堆积在内存里，导致redis内存块耗尽了。怎么解决这个问题呢？
 
 #### 6.2 redis 内存淘汰机制
+每隔一定的时间，会扫描一定数量的数据库的expires字典中一定数量的key，并清除其中已过期的key。\
+可以通过设置maxmemory-policy的值来指定内存淘汰机制。
 - volatile-lru：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰
 - volatile-ttl：从已设置过期时间的数据集（server.db[i].expires）中挑选将要过期的数据淘汰
 - volatile-random：从已设置过期时间的数据集（server.db[i].expires）中任意选择数据淘汰
