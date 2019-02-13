@@ -1,9 +1,11 @@
 package xyz.up123.springboot.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import xyz.up123.springboot.server.UserServer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,6 +23,9 @@ import javax.servlet.http.HttpServletResponse;
 @Controller()
 @RequestMapping("/url")
 public class Url {
+
+    @Autowired
+    private UserServer userServer;
 
     @GetMapping("/forward")
     public String urlFun1(HttpServletRequest request, HttpServletResponse response) {
@@ -56,8 +61,9 @@ public class Url {
     @GetMapping("/demo3")
     public String demo3(@RequestHeader(name = "myHeader") String myHeader,
                       @CookieValue(name = "myCookie") String myCookie) {
-        System.out.println("myHeader:" + myHeader);
-        System.out.println("myCookie:" + myCookie);
+        //System.out.println("myHeader:" + myHeader);
+        //System.out.println("myCookie:" + myCookie);
+        //userServer.sayHello();
         return "/index";
     }
 }

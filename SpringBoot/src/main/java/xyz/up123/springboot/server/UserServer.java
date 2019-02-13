@@ -16,4 +16,5 @@ public interface UserServer {
 
     int updateByPrimaryKey(User record);
 
+    void sayHello();
 }

@@ -60,5 +60,8 @@ public class UserServerImpl implements UserServer {
         return userDao.updateByPrimaryKey(record);
     }
 
-
+    @Override
+    public void sayHello() {
+        System.out.println(Thread.currentThread().getId() + "===============" + this.hashCode());
+    }
 }
