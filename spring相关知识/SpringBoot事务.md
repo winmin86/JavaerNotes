@@ -31,7 +31,7 @@ Spring默认情况下会对运行期例外(RunTimeException)，即uncheck异常�
 上面三种方式也可在xml配置
 
 PS:将派生于Error或者RuntimeException的异常称为unchecked异常，所有其他的异常成为checked异常。\
-![img](img/exception.jpg)
+![img](../SpringBoot/src/main/resources/img/exception.jpg)
 ---
 ### 一.spring事务传播属性propagation 
 在枚举Propagation（TransactionDefinition接口类似）中一共定义了7种事务传播属性：

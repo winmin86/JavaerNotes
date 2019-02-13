@@ -116,7 +116,7 @@ Teacher teacher= (Teacher) context.getBean("teacher");
 </bean>
 ```
 - **接口注入**
-![image](img/zhuru.png)
+![image](../spring/src/main/resources/img/zhuru.png)
 ```
 构造函数注入理由：
 
