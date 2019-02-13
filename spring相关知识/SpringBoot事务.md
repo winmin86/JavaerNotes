@@ -1,6 +1,5 @@
 - [摘自]("https://blog.csdn.net/happydecai/article/details/80338053"")
 
-
 ```
 ServiceA {
     //自定义的transactionManager
@@ -18,7 +17,7 @@ ServiceB {
 ### 〇.事务的嵌套概念
 所谓事务的嵌套就是两个事务方法之间相互调用。spring事务开启 ，或者是基于接口的或者是基于类的代理被创建
 （注意一定要是代理，不能手动new 一个对象，并且此类（有无接口都行）一定要被代理——spring中的bean只要纳入了IOC管理都是被代理的）。
-所以**在同一个类中一个方法调用另一个方法有事务的方法，事务是不会起作用的。**
+所以<font color=#0000ff size=18>在同一个类中一个方法调用另一个方法有事务的方法，事务是不会起作用的。</font>
 Spring默认情况下会对运行期例外(RunTimeException)，即uncheck异常，进行事务回滚。
 如果遇到checked异常就不回滚。
 如何改变默认规则：

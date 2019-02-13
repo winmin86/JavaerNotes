@@ -7,7 +7,7 @@ redirect: 重定向
 ### 异同
 #### 1.从地址栏显示来说
 - forward是服务器请求资源,服务器直接访问目标地址的URL,把那个URL的响应内容读取过来,然后把这些内容再发给浏览器.浏览器根本不知道服务器发送的内容从哪里来的,所以它的**地址栏还是原来的地址**.
-- redirect是服务端根据逻辑,发送一个状态码,告诉浏览器重新去请求那个地址.所以**地址栏显示的是新的URL**.
+- redirect是服务端根据逻辑,发送一个状态码(通常是302临时重定向),告诉浏览器重新去请求那个地址.所以**地址栏显示的是新的URL**.
 
 #### 2.从数据共享来说
 - forward:转发页面和转发到的页面可以共享request里面的数据.
@@ -32,7 +32,7 @@ Forward和Redirect代表了两种请求转发方式：直接转发和间接转�
 - 间接转发就相当于："A找B借钱，B说没有，让A去找C借"。
 
 下面详细阐述一下两者的原理：
-#### 直接请求转发(Forward) 　
+#### 直接请求转发(Forward)
 直接转发方式用的更多一些，一般说的请求转发指的就是直接转发方式。\
 Web应用程序大多会有一个控制器，由控制器来控制请求应该转发给那个信息资源。然后由这些信息资源处理请求，处理完以后还可能转发给另外的信息资源来返回给用户，这个过程就是经典的MVC模式。\
 javax.serlvet.RequestDispatcher接口是请求转发器必须实现的接口，由Web容器为Servlet提供实现该接口的对象，通过调用该接口的forward()方法到达请求转发的目的，示例代码如下：
@@ -43,7 +43,7 @@ public void doGet(HttpServletRequest request , HttpServletResponse response){
     //获取请求转发器对象，该转发器的指向通过getRequestDisPatcher()的参数设置
     RequestDispatcher requestDispatcher =request.getRequestDispatcher("资源的URL");
     //调用forward()方法，转发请求      
-    requestDispatcher.forward(request,response);    
+    requestDispatcher.forward(request,response);
 }
 ```
 ![image](img/forward.png)
@@ -78,10 +78,10 @@ public void doGet(HttpServletRequest request,HttpServletResponse response){
 对于直接方式，客户端浏览器只发出一次请求，Servlet把请求转发给Servlet、HTML、JSP或其它信息资源，由第2个信息资源响应该请求，两个信息资源共享同一个request对象。
 
 ##### forward过程
-转发，服务器端行为。web服务器把接受的请求，调用内部的方法在容器内部完成请求处理和转发动作，然后响应客户端，在这里，转发的路径必须是同一个web容器下的url，其不能转向到其他的web路径上去，中间传递的是自己的容器内的request。
+转发，服务器端行为。web服务器把接受的请求，调用内部的方法在容器内部完成请求处理和转发动作，然后响应客户端，在这里，**转发的路径必须是同一个web容器下的url，其不能转向到其他的web路径上去，中间传递的是自己的容器内的request**。
 
 ##### redirect过程
-重定向，客户端行为。客户端发送http请求，web服务器接受后发送**状态码响应及对应新的location给客客户端，客户端发现是**响应，则自动再发送一个新的http请求，请求url是新的location地址，在这里location可以重定向到任意URL，既然是浏览器重新发出了请求，则就没有什么request传递的概念了。重定向行为是浏览器做了至少两次的访问请求的。
+重定向，客户端行为。客户端发送http请求，web服务器接受后发送302状态码响应及对应新的location给客客户端，客户端发现是302响应，则自动再发送一个新的http请求，请求url是新的location地址，在这里location可以重定向到任意URL，既然是浏览器重新发出了请求，则就没有什么request传递的概念了。重定向行为是浏览器做了至少两次的访问请求的。
 
 
 
