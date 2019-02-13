@@ -71,7 +71,7 @@ public void setUserDao(UserDao userDao) { // 用于属性的setter方法上
 
 - @Configuration：注解在类上，表示这是一个IOC容器，相当于spring的配置文件，java配置的方式。 IOC容器的配置类一般与 @Bean 注解配合使用，用 @Configuration 注解类等价与 XML 中配置 beans，用@Bean 注解方法等价于 XML 中配置 bean。
 - @Bean： 注解在方法上，声明当前方法返回一个Bean
-- @Scope：注解在类上，描述spring容器如何创建Bean实例。
+- @Scope：注解在类上，描述spring容器如何创建Bean实例。它有一下几个值：
 ```markdown
 （1）singleton： 表示在spring容器中的单例，通过spring容器获得该bean时总是返回唯一的实例
 （2）prototype：表示每次获得bean都会生成一个新的对象
@@ -89,6 +89,9 @@ public void setUserDao(UserDao userDao) { // 用于属性的setter方法上
  method:指定请求的method类型， GET、POST、PUT、DELETE等 
  consumes:指定处理请求的提交内容类型（Content-Type），如application/json,text/html; 
  produces:指定返回的内容类型，仅当request请求头中的(Accept)类型中包含该指定类型才返回
+
+示例：
+> @RequestMapping( value = "/url" , method = RequestMethod.POST , consumes = MediaType.APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_UTF8_VALUE )
 
 - @RequestParam：用在方法的参数前面。 
 - @PathVariable:路径变量。
