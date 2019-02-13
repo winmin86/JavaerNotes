@@ -110,8 +110,8 @@ AOP利用一种称为“横切”的技术，剖解开封装的对象内部，�
 
 在AOP中，我们将这些具有公共逻辑的，与其他模块的核心逻辑纠缠在一起的行为称为“横切关注点（Crosscutting Concern）”，因为它跨越了给定编程模型中的典型职责界限。
 
-![image](../spring/src/main/resources/img/aop.png)
-![image](../spring/src/main/resources/img/aop1.png)
+![image](img/aop.png)
+![image](img/aop1.png)
 
 ### AOP通知有哪些类型？
 - 前置通知（Before advice）：在某连接点（join point）之前执行的通知，但这个通知不能阻止连接点前的执行（除非它抛出一个异常）。
@@ -140,10 +140,10 @@ startTime.set(System.currentTimeMillis());//写入值
 startTime.get();//读取值
 ```
 ### 为什么要有事物传播行为？
-![image](../spring/src/main/resources/img/transaction.png)
+![image](img/transaction.png)
 
 ### SpringMVC的工作流程？
-![img](../spring/src/main/resources/img/mvc.jpg)
+![img](img/mvc.jpg)
 
 流程\
 1、用户发送请求至前端控制器DispatcherServlet\
