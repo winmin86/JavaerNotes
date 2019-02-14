@@ -26,7 +26,7 @@ public class CyclicBarrierTest {
                         Thread.sleep((long) (Math.random() * 10000));
                         System.out.println("线程"+ Thread.currentThread().getName()
                                 + "即将到达集合点1,当前已有 "+(cb.getNumberWaiting()+1) +"个已经到达，"+(cb.getNumberWaiting() == 2?"都到齐了，继续走啊":"正在等待"));
-                        cb.await();
+                        cb.await();//用来挂起当前线程，直至所有线程都到达barrier状态再同时执行后续任务
 
                         Thread.sleep((long) (Math.random() * 10000));
                         System.out.println("线程"+ Thread.currentThread().getName()
