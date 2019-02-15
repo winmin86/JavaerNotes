@@ -16,6 +16,40 @@ import java.util.stream.Stream;
  */
 public class Test {
     public static void main(String[] args) {
+        Object obj = new Object();
+        try {
+            obj.wait();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+        //开启一个线程
+        /*Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("我是新开副线程的执行");
+                //这个方法会先让副线程沉睡1秒之后在执行，但是期间不会影响主线程的执行
+                try {
+                    Thread.sleep(1000L);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("===============");
+            }
+        });
+        thread.start();
+        try {
+            Thread.sleep(1000);
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("我是主线程的执行");*/
+
+        /*System.exit(0);
+
         Integer[] integerArr = {1,2,3,4,5};
         List<Integer> integers1 = new ArrayList(Arrays.asList(integerArr));
         integers1.add(6);
@@ -79,10 +113,8 @@ public class Test {
                 e1.printStackTrace();
             }
         });
-        System.out.println("============" + integerList.size());
+        System.out.println("============" + integerList.size());*/
     }
-
-
 
 
     private static void setInteger(List<Integer> integerList, Integer e) {

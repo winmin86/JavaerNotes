@@ -12,7 +12,7 @@ public class JoinTest {
         Thread t1 = new Thread(()->{
             System.out.println("t1");
             try {
-                Thread.sleep(2000);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -21,7 +21,7 @@ public class JoinTest {
         Thread t2 = new Thread(()->{
             System.out.println("t2");
             try {
-                Thread.sleep(2000);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -30,24 +30,21 @@ public class JoinTest {
         Thread t3 = new Thread(()->{
             System.out.println("t3");
             try {
-                Thread.sleep(2000);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         });
 
         try {
-            t2.join();
-            t3.join();
             t1.start();
-
             t1.join();
-            t3.join();
+
             t2.start();
-
-            t1.join();
             t2.join();
+
             t3.start();
+            t3.join();
 
 
         } catch (InterruptedException e) {
