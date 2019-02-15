@@ -1,6 +1,5 @@
-- [参考](https://www.jianshu.com/p/fa6667dfb4ca)
-- [CODE](/多线程和并发/mt/sync/Sync1.java)
-><a href="https://www.jianshu.com/p/fa6667dfb4ca" target="_blank">参考</a>
+><a href="https://www.jianshu.com/p/fa6667dfb4ca" target="_blank">[参考]</a>\
+<a href="/多线程和并发/mt/sync/Sync1.java" target="_blank">[CODE]</a>
 
 ### 1.sleep()方法
 sleep()是Thread的静态方法。\
