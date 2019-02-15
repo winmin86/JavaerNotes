@@ -1,3 +1,6 @@
+- [参考](https://www.jianshu.com/p/fa6667dfb4ca)
+- [CODE](/多线程和并发/mt/sync/Sync1.java)
+
 ### 1.sleep()方法
 sleep()是Thread的静态方法。\
 **让线程进入阻塞状态，不会释放锁。**\

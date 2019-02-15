@@ -38,6 +38,7 @@ public class JoinTest {
 
         try {
             t1.start();
+            //join 该线程优先执行 其他线程进入等待
             t1.join();
 
             t2.start();
