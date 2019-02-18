@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Package: sync
  * @ClassName: Sync4
  * @Description: java类作用描述
- * @Author: zhuwenming
+ * @Author: ershixiong
  * @CreateDate: 2019/2/15 14:41
  * @Version: 1.0
  */

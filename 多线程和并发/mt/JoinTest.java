@@ -3,7 +3,7 @@
  * @Package: PACKAGE_NAME
  * @ClassName: JoinTest
  * @Description: java类作用描述
- * @Author: zhuwenming
+ * @Author: ershixiong
  * @CreateDate: 2019/2/14 11:15
  * @Version: 1.0
  */
