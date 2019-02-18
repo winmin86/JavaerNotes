@@ -12,12 +12,16 @@
 - [聊聊高并发](https://blog.csdn.net/ITer_ZC/column/info/loveconcurrency)
 - [JUC](https://www.cnblogs.com/pony1223/category/1241236.html)
 
+### Kafka
+- [apache kafka技术分享系列](https://blog.csdn.net/lizhitao/article/details/39499283)
+
 ### Lambda
 - [Java Stream 详解](https://colobu.com/2016/03/02/Java-Stream/)
 
 ### 优秀博客
 - [語言技術：Java Gossip](https://openhome.cc/Gossip/Java/index.html)
 - [AKKA](https://blog.csdn.net/liubenlong007/article/details/53782966)
+- [GitHub](https://github.com/doocs/advanced-java)
 
 
 
