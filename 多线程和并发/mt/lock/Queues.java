@@ -1,3 +1,5 @@
+package lock;
+
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -5,7 +7,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 /**
  * @ProjectName: JavaerNotes
  * @Package: PACKAGE_NAME
- * @ClassName: Queues
+ * @ClassName: lock.Queues
  * @Description: java类作用描述
  * @Author:
  * @CreateDate: 2019/2/13 15:56

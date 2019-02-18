@@ -1,11 +1,13 @@
+package countdownlatch;
+
 import java.util.concurrent.CountDownLatch;
 
 /**
  * @ProjectName: JavaerNotes
  * @Package: PACKAGE_NAME
- * @ClassName: CountDownLatchDemo
+ * @ClassName: countdownlatch.CountDownLatchDemo
  * @Description: java类作用描述
- * @Author: zhuwenming
+ * @Author: ershixiong
  * @CreateDate: 2019/2/13 18:06
  * @Version: 1.0
  */

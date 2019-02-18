@@ -1,11 +1,13 @@
+package semaphore;
+
 import java.util.concurrent.Semaphore;
 
 /**
  * @ProjectName: JavaerNotes
  * @Package: PACKAGE_NAME
- * @ClassName: SemaphoreTest1
+ * @ClassName: semaphore.SemaphoreTest1
  * @Description: java类作用描述
- * @Author: zhuwenming
+ * @Author: ershixiong
  * @CreateDate: 2019/2/14 10:35
  * @Version: 1.0
  */

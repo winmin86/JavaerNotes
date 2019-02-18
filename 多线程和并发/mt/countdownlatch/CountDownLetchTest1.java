@@ -1,9 +1,9 @@
-/**
+package countdownlatch; /**
  * @ProjectName: JavaerNotes
  * @Package: PACKAGE_NAME
- * @ClassName: CountDownLetchTest1
+ * @ClassName: countdownlatch.CountDownLetchTest1
  * @Description: java类作用描述
- * @Author: zhuwenming
+ * @Author: ershixiong
  * @CreateDate: 2019/2/13 19:06
  * @Version: 1.0
  */

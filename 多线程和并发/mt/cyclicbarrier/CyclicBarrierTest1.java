@@ -1,10 +1,12 @@
+package cyclicbarrier;
+
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
  * @ProjectName: JavaerNotes
  * @Package: PACKAGE_NAME
- * @ClassName: CyclicBarrierTest1
+ * @ClassName: cyclicbarrier.CyclicBarrierTest1
  * @Description: java类作用描述
  * @Author:
  * @CreateDate: 2019/2/14 9:36

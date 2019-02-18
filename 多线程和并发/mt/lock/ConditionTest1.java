@@ -1,3 +1,5 @@
+package lock;
+
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -5,9 +7,9 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @ProjectName: JavaerNotes
  * @Package: PACKAGE_NAME
- * @ClassName: ConditionTest1
+ * @ClassName: lock.ConditionTest1
  * @Description: A 打印10次，B打印20次 ，C打印5次依次递归5次
- * @Author: zhuwenming
+ * @Author: ershixiong
  * @CreateDate: 2019/2/13 17:21
  * @Version: 1.0
  */

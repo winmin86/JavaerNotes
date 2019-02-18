@@ -1,3 +1,5 @@
+package cyclicbarrier;
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
@@ -9,7 +11,7 @@ import java.util.stream.Collectors;
 /**
  * @ProjectName: JavaerNotes
  * @Package: PACKAGE_NAME
- * @ClassName: CyclicBarrierTest2
+ * @ClassName: cyclicbarrier.CyclicBarrierTest2
  * @Description: java类作用描述
  * @Author:
  * @CreateDate: 2019/2/14 9:51

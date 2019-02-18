@@ -1,9 +1,11 @@
+package lock;
+
 import java.util.*;
 
 /**
  * @ProjectName: JavaerNotes
  * @Package: PACKAGE_NAME
- * @ClassName: ReadWriteLockTest
+ * @ClassName: lock.ReadWriteLockTest
  * @Description: java类作用描述
  * @Author:
  * @CreateDate: 2019/2/13 15:57

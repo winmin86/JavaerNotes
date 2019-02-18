@@ -1,3 +1,5 @@
+package lock;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.locks.ReadWriteLock;
@@ -6,7 +8,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 /**
  * @ProjectName: JavaerNotes
  * @Package: PACKAGE_NAME
- * @ClassName: CacheDemo
+ * @ClassName: lock.CacheDemo
  * @Description: java类作用描述
  * @Author:
  * @CreateDate: 2019/2/13 16:44

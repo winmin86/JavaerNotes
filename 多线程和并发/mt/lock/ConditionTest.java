@@ -1,3 +1,5 @@
+package lock;
+
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -5,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @ProjectName: JavaerNotes
  * @Package: PACKAGE_NAME
- * @ClassName: ConditionTest
+ * @ClassName: lock.ConditionTest
  * @Description: java类作用描述
  * @Author:
  * @CreateDate: 2019/2/13 17:07

@@ -1,9 +1,11 @@
+package semaphore;
+
 import java.util.concurrent.*;
 
 /**
  * @ProjectName: JavaerNotes
  * @Package: PACKAGE_NAME
- * @ClassName: SemaphoreTest
+ * @ClassName: semaphore.SemaphoreTest
  * @Description:
  *
  * Semaphore实现信号灯
