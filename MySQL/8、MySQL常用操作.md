@@ -246,7 +246,7 @@ SHOW PROCESSLIST;
 
 
 备份数据库\
-mysqldump -h 10.150.148.138 -uttshop_reader -pMhxzKhl123 ttshop --lock-tables=false > /home/zhuwenming/test.sql
+mysqldump -h 10.150.148.138 -uttshop_reader -pMhxzKhl123 ttshop --lock-tables=false > /home/ershixiong/test.sql
 
 查看INNODB存储引擎的状态\
 SHOW ENGINE INNODB STATUS\G;
