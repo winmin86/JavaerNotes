@@ -17,5 +17,26 @@ import java.util.stream.Stream;
  */
 public class Test {
 
+    public static void main(String[] args) {
+        ShareData1 shareData1 = new ShareData1();
+        new Thread(shareData1).start();
+        new Thread(shareData1).start();
 
+        try {
+            Thread.sleep(1000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(shareData1.count);
+    }
+
+    static class ShareData1 implements Runnable {
+        public int count = 100;
+        public void run() {
+            while (count > 0) {
+                count--;
+                System.out.println("run:"+count);
+            }
+        }
+    }
 }
