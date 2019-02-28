@@ -12,7 +12,7 @@ import java.util.List;
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private int uid;
+    private Integer uid;
     //帐号
     private String userName;
     //名称（昵称或者真实姓名，不同系统不同定义）
@@ -26,11 +26,11 @@ public class User implements Serializable {
 
     private List<Role> roles;
 
-    public int getUid() {
+    public Integer getUid() {
         return uid;
     }
 
-    public void setUid(int uid) {
+    public void setUid(Integer uid) {
         this.uid = uid;
     }
 

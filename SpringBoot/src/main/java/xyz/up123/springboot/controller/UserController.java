@@ -66,5 +66,13 @@ public class UserController {
         return RequestHolder.getId();
     }
 
+    @GetMapping("/user")
+    public User getUser() {
+        User user = new User();
+        //user.setUid(1);
+        user.setName("二师兄");
+        user.setUserName("尼古拉斯·二师兄");
+        return user;
+    }
 
 }
