@@ -1,5 +1,7 @@
 package xyz.up123.test.dataMasking;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.util.Arrays;
@@ -19,6 +21,7 @@ import java.util.Arrays;
 //Include.NON_NULL 属性为NULL 不序列化 
 
 @JsonSerialize(include= JsonSerialize.Inclusion.NON_DEFAULT)
+//@JsonIgnoreProperties(value = { "age","password" })
 public class User {
 
     private Long useId;
@@ -28,6 +31,9 @@ public class User {
 
     @SensitiveInfo(type = SensitiveType.CHINESE_NAME)
     private String useName;
+
+    //@JsonIgnore//过滤掉
+    private String password;
 
     @SensitiveInfo(type = SensitiveType.MOBILE_PHONE)
     private String mobile;
@@ -68,6 +74,14 @@ public class User {
 
     public void setUseName(String useName) {
         this.useName = useName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getMobile() {
