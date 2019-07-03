@@ -61,7 +61,6 @@ public class Test {
                 System.out.println(personList1.get(i).toString());
                 System.out.println();
             }
-            System.out.println("==================");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -75,12 +74,9 @@ public class Test {
             e.printStackTrace();
         }*/
 
-
         //mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
         //PropertyAccessor 支持的类型有 ALL,CREATOR,FIELD,GETTER,IS_GETTER,NONE,SETTER
         //Visibility 支持的类型有 ANY,DEFAULT,NON_PRIVATE,NONE,PROTECTED_AND_PUBLIC,PUBLIC_ONLY
-
-
 
         try {
             System.in.read();

@@ -11,6 +11,7 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.context.ContextLoader;
 
 import javax.sql.DataSource;
 import java.util.HashMap;
