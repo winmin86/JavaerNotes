@@ -101,15 +101,22 @@ public class ToHtml {
 
     public static ModelAndView getHtml(HttpServletRequest request, HttpServletResponse response) {
 
-        String path = getPath(request) + ".html";
+        //String path = getPath(request) + ".html";
+        String path = "static" + request.getServletPath() + ".html";
         File file = new File(path);
         ModelAndView mv = new ModelAndView();
         System.out.println(file.lastModified());
 
         if (file.exists()) {
-            mv.setViewName("/static/" + getPath(request));
+            mv.setViewName("static" + request.getServletPath());
             return mv;
         }
         return null;
+    }
+
+    public static boolean htmlExist(HttpServletRequest request, HttpServletResponse response) {
+        String path = getPath(request) + ".html";
+        File file = new File(path);
+        return file.exists();
     }
 }

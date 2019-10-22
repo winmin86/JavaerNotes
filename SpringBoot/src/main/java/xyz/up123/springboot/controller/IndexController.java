@@ -17,10 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @ProjectName: JavaerNotes
@@ -45,7 +42,10 @@ public class IndexController {
             return html;
         }
         System.out.println(ToHtml.getPath(request));*/
-
+        ModelAndView html = ToHtml.getHtml(request, response);
+        if (Objects.nonNull(html)) {
+            return html;
+        }
         List<String> list = new ArrayList<>();
         list.add("需求");
         list.add("成果000");
