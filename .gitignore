@@ -4,4 +4,7 @@ target/
 .idea/
 .git/
 workspace.xml
+*.log
+static
+*.iml
 
