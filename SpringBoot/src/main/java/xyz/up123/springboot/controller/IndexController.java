@@ -3,15 +3,14 @@ package xyz.up123.springboot.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
+import xyz.up123.springboot.common.ControllerWebLog;
 import xyz.up123.springboot.common.ToHtml;
+import xyz.up123.springboot.domain.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -63,12 +62,21 @@ public class IndexController {
 
     @GetMapping("/index/log")
     @ResponseBody
-    public Object log() {
+    @ControllerWebLog(name = "GET请求测试接口", intoDb = true, pamams = {})
+    public Object log(User user) {
         logger.trace("【IndexController.class】trace level log input");
         logger.debug("【IndexController.class】debug level log input");
         logger.info("【IndexController.class】info level log input");
         logger.warn("【IndexController.class】warn level log input");
         logger.error("【IndexController.class】error level log input");
         return "hello world";
+    }
+
+
+    @PostMapping("/index/user")
+    @ResponseBody
+    @ControllerWebLog(name = "user测试接口", intoDb = true, pamams = {"userName", "id"})
+    public Object user(@RequestBody User user, Integer id) {
+        return "user";
     }
 }
