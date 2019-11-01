@@ -7,4 +7,5 @@ workspace.xml
 *.log
 static
 *.iml
+imgs
 
